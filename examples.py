@@ -29,7 +29,7 @@ print(randomComments[0])
 posRegular = clean.rex(randomComments[0]) #check space when start
 print(posRegular)
 #manual comment
-comentario = '   @handz it was quiet.... unfortunatly' # pend with: _ 
+comentario = '   @handz  a z y Z ~it: ^ } :-* was_] HOLA  ` A B :D :=D :) :() @{ quiet [.... <> % unfortunatly!!!!! http://www.google.com' # pend with: _ 
 print(comentario) 
 posRegularText = clean.rex(comentario)
 print(posRegularText)
