@@ -1,5 +1,4 @@
 from easyclean import clean
-#import numpy as np 
 import pandas as pd
 import random as rd
 
@@ -23,20 +22,24 @@ comments_list = list(comments)
 randomComments = rd.sample(comments_list, 5)
 #print(randomComments)
 
-#examples
+#examples rex
+'''
 #one comment
 print(randomComments[0])
 posRegular = clean.rex(randomComments[0]) #check space when start
 print(posRegular)
 #manual comment
-comentario = '   @handz  a z y Z ~it: ^ } :-* was_] HOLA  ` A B :D :=D :) :() @{ quiet [.... <> % unfortunatly!!!!! http://www.google.com' # pend with: _ 
+comentario = '   @handz  a z y Z ~it: ^ } :-* was_] HOLA with  <3 ` A B :D :=D :) :() @{ quiet [.... <> % unfortunatly!!!!! http://www.google.com' # pend with: _ 
 print(comentario) 
 posRegularText = clean.rex(comentario)
 print(posRegularText)
+print(clean.cstopwords(posRegularText))
+'''
 
-
-
-
+#examples gethashtag
+comment = 'hi how are you? #live #paris love you #family'
+listHashtag = clean.gethashtags(comment) #Parameter hash: default is False, True: word without #
+print(listHashtag)
 
 
 
