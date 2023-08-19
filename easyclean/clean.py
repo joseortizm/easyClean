@@ -51,6 +51,21 @@ def gethashtags(txt, hash=False):
     return listHashtag        
         
 
+#number for text
+
+#get urls
+
+#get emails
+
+
+#get users 
+
+
+#repeated letters hello vs heloooo
+
+#lowercase to uppercase or  uppercase to lowercase
+
+
 
 
 
