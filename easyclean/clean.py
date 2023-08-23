@@ -52,18 +52,28 @@ def gethashtags(txt, hash=False):
         
 
 #number for text
-
+def getnumbers(txt):
+    return txt 
 #get urls
+def geturls(txt):
+    return txt
 
 #get emails
-
+def getemails(txt):
+    return txt
 
 #get users 
-
+def getusers(txt):
+    return txt
 
 #repeated letters hello vs heloooo
+def reduce(txt):
+    return txt
 
-#lowercase to uppercase or  uppercase to lowercase
+
+
+
+
 
 
 
