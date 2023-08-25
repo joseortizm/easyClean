@@ -37,9 +37,43 @@ print(clean.cstopwords(posRegularText))
 '''
 
 #examples gethashtag
+'''
 comment = 'hi how are you? #live #paris love you #family'
 listHashtag = clean.gethashtags(comment) #Parameter hash: default is False, True: word without #
 print(listHashtag)
+'''
+
+#examples getnumbers
+'''
+comment = 'how are 1s24 3 you 16F hi 69$'
+numbers = clean.getnumbers(comment)
+print(numbers)
+'''
+
+#examples geturls
+'''
+comment = 'hello friend https://www.example.com go to http://exampletwoo.org'
+urls = clean.geturls(comment)
+print(urls)
+'''
+
+#examples emails
+'''
+comment = 'hello friend jose@hi5.com go to pepe@hi5you.org hello 56'
+urls = clean.getemails(comment)
+print(urls)
+'''
+
+#examples users
+comment = 'hello friend @joseortizm_ go to @capacitadero hello 56'
+users = clean.getusers(comment)
+print(users)
+
+
+
+
+
+
 
 
 

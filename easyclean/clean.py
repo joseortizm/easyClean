@@ -3,6 +3,7 @@ import nltk
 from cleantext import clean
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from flashtext import KeywordProcessor
 
 
 
@@ -53,21 +54,30 @@ def gethashtags(txt, hash=False):
 
 #number for text
 def getnumbers(txt):
+    reg =  r'\d+\.\d+|\d+'
+    txt =  re.findall(reg, txt)
     return txt 
+
 #get urls
 def geturls(txt):
+    reg = r'https?://\S+'
+    txt = re.findall(reg, txt) 
     return txt
 
 #get emails
 def getemails(txt):
-    return txt
+   reg = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+   txt = re.findall(reg, txt)
+   return txt
 
 #get users 
 def getusers(txt):
+    reg = r'@([A-Za-z0-9_]+)' 
+    txt = re.findall(reg, txt)
     return txt
 
 #repeated letters hello vs heloooo
-def reduce(txt):
+def reducetext(txt):
     return txt
 
 
