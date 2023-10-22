@@ -22,8 +22,8 @@ comments_list = list(comments)
 randomComments = rd.sample(comments_list, 5)
 #print(randomComments)
 
-#examples rex
 '''
+#examples rex
 #one comment
 print(randomComments[0])
 posRegular = clean.rex(randomComments[0]) #check space when start
@@ -35,6 +35,7 @@ posRegularText = clean.rex(comentario)
 print(posRegularText)
 print(clean.cstopwords(posRegularText))
 '''
+
 
 #examples gethashtag
 '''

@@ -3,7 +3,7 @@ import nltk
 from cleantext import clean
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from flashtext import KeywordProcessor
+#from flashtext import KeywordProcessor
 
 
 
