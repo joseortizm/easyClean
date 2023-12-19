@@ -78,9 +78,19 @@ def getusers(txt):
 
 #repeated letters hello vs heloooo
 def reducetext(txt):
+    s = set()
+    mlist = []
+    for ch in txt:
+        if ch not in s:
+            s.add(ch)
+            mlist.append(ch)
+    
+    txt = ' '.join(mlist) 
     return txt
 
-
+#tokenizaacion
+def toneniza(txt):
+    return txt
 
 
 

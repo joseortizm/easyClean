@@ -1,4 +1,4 @@
-from easyclean import clean
+from easyclean import clean, datasets
 import pandas as pd
 import random as rd
 
@@ -66,13 +66,22 @@ print(urls)
 '''
 
 #examples users
+'''
 comment = 'hello friend @joseortizm_ go to @capacitadero hello 56'
 users = clean.getusers(comment)
 print(users)
+'''
+#examples reduce txt
+'''
+comment = 'hellooooo friendsss hoowww are youuu?'
+reducido = clean.reducetext(comment)
+print(reducido)
+'''
 
-
-
-
+#datasets#
+listDatasets = ["datasets/IMDBDatasetSPANISH.csv", "datasets/filmaffinity", "datasets/muchocine"]
+nPath = datasets.join(listDatasets)
+print(nPath)
 
 
 
