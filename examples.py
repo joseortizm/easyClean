@@ -79,9 +79,14 @@ print(reducido)
 '''
 
 #datasets#
-listDatasets = ["datasets/IMDBDatasetSPANISH.csv", "datasets/filmaffinity", "datasets/muchocine"]
+
+listDatasets = ["../datasets/reviews/IMDBDatasetSPANISH.csv", "../datasets/reviews/filmaffinity", "../datasets/reviews/muchocine"]
 nPath = datasets.join(listDatasets)
 print(nPath)
+pandasDF = pd.read_csv(listDatasets[0])
+filas = ['review_es', 'sentiment'] #columnas por mantener
+DF = datasets.delete(pandasDF, filas)
+print(DF)
 
 
 
