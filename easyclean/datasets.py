@@ -1,5 +1,6 @@
 #hello datasets
 import pandas as pd
+import os
 
 
 
@@ -10,17 +11,22 @@ def delete(df, cols):
 
 def join(paths):
     n = len(paths)
-    for i in paths:
-        df = pd.read_csv(i)
-        if  isinstance(df.columns[0], str):
-            print('header')
-            print(df.columns[1])
+    dataframes = []
+    for i, dataset in enumerate(paths):
+        if isinstance(dataset, pd.DataFrame):
+            #print('dataframe')
+            dataframes.append(dataset)
+        elif os.path.isfile(dataset):
+            #print('es archivo')
+            df = pd.read_csv(dataset)
+            dataframes.append(df)
         else:
-            print('no header')
+            print('undetected element with index:', i)
 
-        _, col = df.shape
-        #print(col)         
-    #return n
+    allData = dataframes[0]
+    for df in dataframes[1:]:
+        allData = pd.concat([allData, df])
+    return allData 
 
 
 
