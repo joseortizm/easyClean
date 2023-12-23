@@ -90,14 +90,8 @@ DF = datasets.delete(pandasDF, filas)
 
 #listDatasets = ["../datasets/reviews/IMDBDatasetSPANISH.csv", "../datasets/reviews/filmaffinity", "../datasets/reviews/muchocine"]
 listDatasets = [DF, "../datasets/reviews/filmaffinity", "../datasets/reviews/muchocine", 2]
-
-nPath = datasets.join(listDatasets)
-print(nPath)
-
-
-
-
-
-
-
-
+headers = ['text', 'sentiment']
+#obs c/u dataframe: columnas con misma cantidad y mismo orden. Agregar los nombres del header nuevo
+newDatasets = datasets.join(listDatasets, headers)
+print(newDatasets)
+print(newDatasets.shape)

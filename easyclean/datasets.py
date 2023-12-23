@@ -9,23 +9,29 @@ def delete(df, cols):
     df = df.drop(cols_to_drop, axis='columns')
     return df
 
-def join(paths):
+def join(paths, headers):
     n = len(paths)
     dataframes = []
     for i, dataset in enumerate(paths):
         if isinstance(dataset, pd.DataFrame):
-            #print('dataframe')
+            name_col = dataset.columns.tolist()
+            column_name_mapping = {name: new_name for name, new_name in zip(name_col, headers)}
+            dataset = dataset.rename(columns=column_name_mapping)
             dataframes.append(dataset)
         elif os.path.isfile(dataset):
-            #print('es archivo')
-            df = pd.read_csv(dataset)
-            dataframes.append(df)
+            dataset = pd.read_csv(dataset)
+            name_col = dataset.columns.tolist()
+            if name_col != headers:
+                column_name_mapping = {name: new_name for name, new_name in zip(name_col, headers)}
+                dataset = dataset.rename(columns=column_name_mapping)
+            dataframes.append(dataset)
         else:
             print('undetected element with index:', i)
 
     allData = dataframes[0]
     for df in dataframes[1:]:
         allData = pd.concat([allData, df])
+        allData.reset_index(inplace=True, drop=True) 
     return allData 
 
 
